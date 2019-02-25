@@ -1,0 +1,8 @@
+{
+  "name": "docker-bats",
+  "tagline": "Bats is most useful when testing software written in Bash, but you can use it to test any UNIX program.",
+  "license": {
+    "name": "MIT"
+  },
+  "tags": ["docker", "bash", "unit-testing", "bats"]
+}

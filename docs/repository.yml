@@ -1,0 +1,10 @@
+---
+name: Docker Bats
+slug: docker-bats
+project: cardboardci
+namespace: []
+description: Bats is most useful when testing software written in Bash, but you can use it to test any UNIX program.
+license:
+  name: MIT
+tags:
+  - docker

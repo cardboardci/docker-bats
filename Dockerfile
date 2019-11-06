@@ -1,4 +1,4 @@
-FROM alpine:3.8
+FROM alpine:3.10.3
 COPY rootfs/ /
 ARG VERSION=0.4.0
 

@@ -1,8 +1,0 @@
----
-name: github
-provider: github.com
-repository: docker-bats
-url: https://github.com/cardboardci/docker-bats
-clone:
-  ssh: git@github.com:cardboardci/docker-bats.git
-  https: https://github.com/cardboardci/docker-bats.git

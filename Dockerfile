@@ -1,4 +1,8 @@
-FROM alpine:3.10.3
+FROM cardboardci/ci-core:focal
+USER root
+
+ARG DEBIAN_FRONTEND=noninteractive
+
 COPY rootfs/ /
 ARG VERSION=0.4.0
 

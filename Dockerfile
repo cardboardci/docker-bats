@@ -13,6 +13,8 @@ RUN bash "/tmp/bats-${VERSION}/install.sh" /usr/local
 
 CMD ["/usr/local/bin/bats"]
 
+USER cardboardci
+
 ##
 ## Image Metadata
 ##

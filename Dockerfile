@@ -1,17 +1,20 @@
-FROM cardboardci/ci-core:focal
+FROM cardboardci/ci-core@sha256:5b93f4c8cc1ddaa809f9c27d0a865a974ccb43e5e3d38334df1b0d77ea1843fb
 USER root
 
 ARG DEBIAN_FRONTEND=noninteractive
 
+COPY provision/pkglist /cardboardci/pkglist
+RUN apt-get update \
+    && xargs -a /cardboardci/pkglist apt-get install --no-install-recommends -y \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
 COPY rootfs/ /
 ARG VERSION=0.4.0
 
-RUN apk add --no-cache --update bash=4.4.19-r1 curl=7.61.1-r2 jq=1.6_rc1-r1
-RUN curl -o "/tmp/v${VERSION}.tar.gz" -L "https://github.com/sstephenson/bats/archive/v${VERSION}.tar.gz" 
-RUN tar -x -z -f "/tmp/v${VERSION}.tar.gz" -C /tmp/
-RUN bash "/tmp/bats-${VERSION}/install.sh" /usr/local
-
-CMD ["/usr/local/bin/bats"]
+RUN curl -o "/tmp/v${VERSION}.tar.gz" -L "https://github.com/sstephenson/bats/archive/v${VERSION}.tar.gz" \
+    && tar -x -z -f "/tmp/v${VERSION}.tar.gz" -C /tmp/ \
+    && bash "/tmp/bats-${VERSION}/install.sh" /usr/local
 
 USER cardboardci
 

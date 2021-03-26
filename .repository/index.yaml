@@ -1,0 +1,19 @@
+slug: docker-bats
+description: Bats is most useful when testing software written in Bash, but you can use it to test any UNIX program.
+project: cardboardci
+namespace: docker
+status: archived
+icon: icon.svg
+license:
+  type: MIT
+  content: Jonathan Beverly <jrbeverly>
+  year: 2019
+topics: |-
+  [
+    "bash",
+    "bats",
+    "dockerfile",
+    "testing",
+    "testing-tools",
+    "test-anything-protocol"
+  ]
